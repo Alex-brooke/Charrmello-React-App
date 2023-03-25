@@ -1,0 +1,21 @@
+const mongoose = require("mongoose");
+
+const CinematicSchema = new mongoose.Schema(
+    {
+        title: { type: String, required: true, unique: true },
+        description: { type: String},
+        img: { type: String},
+        imgTitle: { type: String},
+        imgThumb: { type: String},
+        trailer: { type: String},
+        audio: { type: String},
+        year: { type: String},
+        limit: { type: Number},
+        genre: { type: String},
+        cast: { type: String},
+        isSeries: { type: Boolean, default: false },
+    },
+    { timestamps: true }
+);
+
+module.exports = mongoose.model("Cinematic", CinematicSchema);
